@@ -2,41 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Timo Club Dating App Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 350 15% 98%;
+    --foreground: 340 15% 15%;
+
+    /* Primary brand colors - Romantic gradient palette */
+    --primary: 340 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 345 85% 65%;
+    --primary-glow: 350 90% 70%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 340 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 340 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --secondary: 25 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 90% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 350 10% 95%;
+    --muted-foreground: 340 10% 55%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 75% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 350 15% 90%;
+    --input: 350 15% 95%;
+    --ring: 340 75% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom design tokens for dating app */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-love: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--secondary-light)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.4));
+    
+    --shadow-love: 0 20px 40px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 10px 30px hsl(340 15% 15% / 0.08);
+    --shadow-float: 0 25px 50px hsl(var(--primary) / 0.2);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,20 +68,23 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 340 20% 8%;
+    --foreground: 350 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 340 15% 12%;
+    --card-foreground: 350 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 340 15% 12%;
+    --popover-foreground: 350 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 340 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 345 85% 65%;
+    --primary-glow: 350 90% 70%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 90% 70%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -100,6 +115,30 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-love {
+    background: var(--gradient-love);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-love {
+    box-shadow: var(--shadow-love);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
   }
 }
