@@ -74,7 +74,7 @@ const Discover = () => {
         <div className="relative z-10 px-6 py-8 text-center text-white">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Heart className="w-8 h-8 text-white" />
-            <h1 className="text-3xl font-bold">Timo Club</h1>
+            <h1 className="text-3xl font-bold">Tlove</h1>
           </div>
           <p className="text-white/90">Encontre conexões verdadeiras</p>
         </div>
